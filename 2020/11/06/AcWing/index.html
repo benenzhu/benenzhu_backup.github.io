@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/11 | Hexo</title>
+  <title>AcWing | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/11/index.html">
+  <meta name="description" content="1.1 基础算法快速排序785.快速排序12do i++; while (q[i] &lt; x);do j--; while (q[j] &gt; x); 为啥不能用&lt;&#x3D; ?  12345678910111213141516171819int a[N];void qs(int* q, int l, int r) &amp;#123;    if (l &gt;&#x3D; r)return;    int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AcWing">
+<meta property="og:url" content="http://example.com/2020/11/06/AcWing/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.1 基础算法快速排序785.快速排序12do i++; while (q[i] &lt; x);do j--; while (q[j] &gt; x); 为啥不能用&lt;&#x3D; ?  12345678910111213141516171819int a[N];void qs(int* q, int l, int r) &amp;#123;    if (l &gt;&#x3D; r)return;    int">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-06T03:26:38.000Z">
+<meta property="article:modified_time" content="2020-11-06T04:15:44.062Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,103 +154,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-AcWing" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      AcWing
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/06/AcWing/" class="archive-article-date">
+
+        
+        <a href="/2020/11/06/AcWing/" class="archive-article-date">
   	<time datetime="2020-11-06T03:26:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/06/AcWing/">AcWing</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-1-基础算法"><a href="#1-1-基础算法" class="headerlink" title="1.1 基础算法"></a>1.1 基础算法</h1><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="785-快速排序"><a href="#785-快速排序" class="headerlink" title="785.快速排序"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/787/">785.快速排序</a></h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> i++; <span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line"><span class="keyword">do</span> j--; <span class="keyword">while</span> (q[j] &gt; x);</span><br></pre></td></tr></table></figure>
+<p>为啥不能用&lt;= ? </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qs</span><span class="params">(<span class="keyword">int</span>* q, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l + r &gt;&gt; <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">do</span> i++;<span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span> j--;<span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j)swap(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    qs(q, l, j), qs(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read();</span><br><span class="line">    rep(i, <span class="number">0</span>, n)a[i] = read();</span><br><span class="line">    qs(a, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    rep(i, <span class="number">0</span>, n)O(a[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="AcWing-786-第k个数"><a href="#AcWing-786-第k个数" class="headerlink" title="AcWing 786. 第k个数"></a><a href="">AcWing 786. 第k个数</a></h4><p>快排 然后输出第k个数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qs</span><span class="params">(<span class="keyword">int</span>* q, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l + r &gt;&gt; <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">do</span> i++;<span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span> j--;<span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j)swap(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    qs(q, l, j), qs(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">int</span> k=read();</span><br><span class="line">    rep(i, <span class="number">0</span>, n)a[i] = read();</span><br><span class="line">    qs(a, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    O(a[k<span class="number">-1</span>]); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="AcWing-787-归并排序"><a href="#AcWing-787-归并排序" class="headerlink" title="AcWing 787. 归并排序"></a>AcWing 787. 归并排序</h4><p>归并排序 memcpy 好像高效一点</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N], tmp[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ms</span><span class="params">(<span class="keyword">int</span>* q, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mi = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    ms(q, l, mi), ms(q, mi + <span class="number">1</span>, r);</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>, i = l, j = mi + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mi &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt; q[j])tmp[k++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k++] = q[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mi)tmp[k++] = q[i++];</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= r)tmp[k++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l, j = <span class="number">0</span>;i &lt;= r;)q[i++] = tmp[j++];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read();</span><br><span class="line">    rep(i, <span class="number">0</span>, n)a[i] = read();</span><br><span class="line">    ms(a, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    rep(i, <span class="number">0</span>, n)O(a[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="AcWing-788-逆序对的数量"><a href="#AcWing-788-逆序对的数量" class="headerlink" title="AcWing 788. 逆序对的数量"></a>AcWing 788. 逆序对的数量</h4><p><strong>记得用ULL 会越界</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N], tmp[N];</span><br><span class="line"><span class="function">ULL <span class="title">ms</span><span class="params">(<span class="keyword">int</span>* q, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> mi = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    ULL res = ms(q, l, mi) + ms(q, mi + <span class="number">1</span>, r);</span><br><span class="line">    <span class="keyword">int</span> i = l, j = mi + <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mi &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) &#123;</span><br><span class="line">            tmp[k++] = q[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            tmp[k++] = q[j++];</span><br><span class="line">            res += mi - i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mi) tmp[k++] = q[i++];</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= r) tmp[k++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l, j = <span class="number">0</span>;i &lt;= r;) &#123;</span><br><span class="line">        q[i++] = tmp[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read();</span><br><span class="line">    rep(i, <span class="number">0</span>, n)a[i] = read();</span><br><span class="line">    ULL cnt = ms(a, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// rep(i, 0, n)O(a[i]);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><h4 id="AcWing-789-数的范围-整数二分"><a href="#AcWing-789-数的范围-整数二分" class="headerlink" title="AcWing 789. 数的范围 整数二分"></a>AcWing 789. 数的范围 整数二分</h4><p><strong>两次二分 寻找数范围的两端</strong></p>
+<p><strong>找左端 mi=l+r&gt;&gt;1; x&lt;=a[mi];</strong></p>
+<p><strong>找右端 mi=l+r+1&gt;&gt;1; a[mi]&lt;=x;</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find2</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mi = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= a[mi])r = mi;</span><br><span class="line">        <span class="keyword">else</span> l = mi + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a[l] != x) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;-1 -1\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    O(l);</span><br><span class="line">    l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mi = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mi] &lt;= x)l = mi;</span><br><span class="line">        <span class="keyword">else</span> r = mi - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, l);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">int</span> k = read();</span><br><span class="line">    rep(i, <span class="number">0</span>, n)a[i] = read();</span><br><span class="line">    <span class="keyword">while</span> (k--) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = read();</span><br><span class="line">        find2(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="AcWing-790-数的三次方根-浮点数二分"><a href="#AcWing-790-数的三次方根-浮点数二分" class="headerlink" title="AcWing 790. 数的三次方根 浮点数二分"></a>AcWing 790. 数的三次方根 浮点数二分</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">double</span> l = <span class="number">-99</span>, r = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; <span class="number">1e-8</span>) &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">pow</span>(mid, <span class="number">3</span>) &gt;= x)r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.6lf\n&quot;</span>, l);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="高精度"><a href="#高精度" class="headerlink" title="高精度"></a>高精度</h3><h4 id="AcWing-791-高精度加法"><a href="#AcWing-791-高精度加法" class="headerlink" title="AcWing 791. 高精度加法"></a>AcWing 791. 高精度加法</h4><h4 id="AcWing-792-高精度减法"><a href="#AcWing-792-高精度减法" class="headerlink" title="AcWing 792. 高精度减法"></a>AcWing 792. 高精度减法</h4><h4 id="AcWing-793-高精度乘法"><a href="#AcWing-793-高精度乘法" class="headerlink" title="AcWing 793. 高精度乘法"></a>AcWing 793. 高精度乘法</h4><h4 id="AcWing-794-高精度除法"><a href="#AcWing-794-高精度除法" class="headerlink" title="AcWing 794. 高精度除法"></a>AcWing 794. 高精度除法</h4><h3 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a>前缀和与差分</h3><h4 id="AcWing-795-前缀和"><a href="#AcWing-795-前缀和" class="headerlink" title="AcWing 795. 前缀和"></a>AcWing 795. 前缀和</h4><h4 id="AcWing-796-子矩阵的和"><a href="#AcWing-796-子矩阵的和" class="headerlink" title="AcWing 796. 子矩阵的和"></a>AcWing 796. 子矩阵的和</h4><h4 id="AcWing-797-差分"><a href="#AcWing-797-差分" class="headerlink" title="AcWing 797. 差分"></a>AcWing 797. 差分</h4><h4 id="AcWing-798-差分矩阵"><a href="#AcWing-798-差分矩阵" class="headerlink" title="AcWing 798. 差分矩阵"></a>AcWing 798. 差分矩阵</h4><h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="AcWing-799-最长连续不重复子序列"><a href="#AcWing-799-最长连续不重复子序列" class="headerlink" title="AcWing 799. 最长连续不重复子序列"></a>AcWing 799. 最长连续不重复子序列</h4><h4 id="AcWing-800-数组元素的目标和"><a href="#AcWing-800-数组元素的目标和" class="headerlink" title="AcWing 800. 数组元素的目标和"></a>AcWing 800. 数组元素的目标和</h4><h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><h4 id="AcWing-801-二进制中1的个数"><a href="#AcWing-801-二进制中1的个数" class="headerlink" title="AcWing 801. 二进制中1的个数"></a>AcWing 801. 二进制中1的个数</h4><h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><h4 id="AcWing-802-区间和"><a href="#AcWing-802-区间和" class="headerlink" title="AcWing 802. 区间和"></a>AcWing 802. 区间和</h4><h3 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h3><h4 id="AcWing-803-区间合并"><a href="#AcWing-803-区间合并" class="headerlink" title="AcWing 803. 区间合并"></a>AcWing 803. 区间合并</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/06/AcWing/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/05/test-my-site/" class="archive-article-date">
-  	<time datetime="2020-11-05T13:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/05/test-my-site/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">test_my_site</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/05/test-my-site/">test_my_site</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/05/hello-world/" class="archive-article-date">
-  	<time datetime="2020-11-05T13:28:20.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/05/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

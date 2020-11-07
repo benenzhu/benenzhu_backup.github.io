@@ -28,7 +28,7 @@
 <meta property="og:description" content="[toc] 数据结构包括单链表，双链表，栈，队列，单调栈，单调队列，KMP，Trie，并查集，堆，哈希表等内容。 单链表Acwing 826.单链表123456789101112131415161718192021222324252627282930313233343536373839404142int e[N], ne[N], idx &#x3D; 1;void init() &amp;#123;    ne[0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-06T05:15:25.000Z">
-<meta property="article:modified_time" content="2020-11-07T08:23:17.637Z">
+<meta property="article:modified_time" content="2020-11-07T09:20:31.756Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-07 16:23:17" itemprop="dateModified" datetime="2020-11-07T16:23:17+08:00">2020-11-07</time>
+                <time title="Modified: 2020-11-07 17:20:31" itemprop="dateModified" datetime="2020-11-07T17:20:31+08:00">2020-11-07</time>
               </span>
 
           
@@ -228,7 +228,14 @@
 
 
 
-<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><h4 id="838-堆排序"><a href="#838-堆排序" class="headerlink" title="838 堆排序"></a>838 堆排序</h4><h4 id="839-模拟堆"><a href="#839-模拟堆" class="headerlink" title="839 模拟堆"></a>839 模拟堆</h4><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><h4 id="840-模拟散列表"><a href="#840-模拟散列表" class="headerlink" title="840 模拟散列表"></a>840 模拟散列表</h4><h4 id="841-字符串哈希"><a href="#841-字符串哈希" class="headerlink" title="841 字符串哈希"></a>841 字符串哈希</h4>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><h4 id="838-堆排序"><a href="#838-堆排序" class="headerlink" title="838 堆排序"></a>838 堆排序</h4><p>以后尽量所有的变量还是写在开始吧.. </p>
+<p>这个在down的时候, 如果是main里面声明的 <code>n = read()</code> 那么整个都会出错 </p>
+<p>down里面一直用的是 没有赋值的 <code>n</code> 让我真的晕了…</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, a[N], m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u, l = <span class="number">2</span> * u, r = <span class="number">2</span> * u + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= n &amp;&amp; a[l] &lt; a[t])t = l;</span><br><span class="line">    <span class="keyword">if</span> (r &lt;= n &amp;&amp; a[r] &lt; a[t])t = r;</span><br><span class="line">    <span class="keyword">if</span> (t != u) &#123;</span><br><span class="line">        swap(a[t], a[u]);</span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fi;</span><br><span class="line">    n = read(), m = read();</span><br><span class="line">    rep(i, <span class="number">1</span>, n + <span class="number">1</span>)a[i] = read();</span><br><span class="line">    per(i, n / <span class="number">2</span> + <span class="number">1</span>, <span class="number">1</span>)down(i);</span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        O(a[<span class="number">1</span>]);</span><br><span class="line">        a[<span class="number">1</span>] = a[n--];</span><br><span class="line">        down(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="839-模拟堆"><a href="#839-模拟堆" class="headerlink" title="839 模拟堆"></a>839 模拟堆</h4><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><h4 id="840-模拟散列表"><a href="#840-模拟散列表" class="headerlink" title="840 模拟散列表"></a>840 模拟散列表</h4><h4 id="841-字符串哈希"><a href="#841-字符串哈希" class="headerlink" title="841 字符串哈希"></a>841 字符串哈希</h4>
     </div>
 
     
@@ -246,7 +253,10 @@
     <a href="/2020/11/06/AcWing-1-1/" rel="prev" title="AcWing-1-1 基础算法">
       <i class="fa fa-chevron-left"></i> AcWing-1-1 基础算法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/07/leetcode/" rel="next" title="leetcode">
+      leetcode <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -319,7 +329,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

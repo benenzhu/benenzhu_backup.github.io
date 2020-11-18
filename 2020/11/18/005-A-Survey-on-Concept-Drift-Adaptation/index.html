@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>005_A_Survey_on_Concept_Drift_Adaptation | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="概念漂移适应研究 ​        当输入数据和目标变量之间的关系随时间变化时，概念漂移主要是指在线监督学习场景。假设本文具有监督学习的一般知识，我们将描述自适应学习过程的特征。对处理概念漂移的现有策略进行分类；概述最具代表性，独特和流行的技术和算法；讨论自适应算法的评估方法；并展示了一组说明性应用。这项调查以综合的方式涵盖了概念漂移的不同方面，以反思现有的现有分散状态。因此，它旨在为研究人员，行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="005_A_Survey_on_Concept_Drift_Adaptation">
+<meta property="og:url" content="http://example.com/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概念漂移适应研究 ​        当输入数据和目标变量之间的关系随时间变化时，概念漂移主要是指在线监督学习场景。假设本文具有监督学习的一般知识，我们将描述自适应学习过程的特征。对处理概念漂移的现有策略进行分类；概述最具代表性，独特和流行的技术和算法；讨论自适应算法的评估方法；并展示了一组说明性应用。这项调查以综合的方式涵盖了概念漂移的不同方面，以反思现有的现有分散状态。因此，它旨在为研究人员，行">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-11-18T08:40:55.000Z">
+<meta property="article:modified_time" content="2020-11-18T09:01:50.306Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-18 17:01:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">005_A_Survey_on_Concept_Drift_Adaptation</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-11-18T08:40:55.000Z" title="Created 2020-11-18 16:40:55">2020-11-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-11-18T09:01:50.306Z" title="Updated 2020-11-18 17:01:50">2020-11-18</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>概念漂移适应研究</p>
+<p>​        当输入数据和目标变量之间的关系随时间变化时，概念漂移主要是指在线监督学习场景。假设本文具有监督学习的一般知识，我们将描述自适应学习过程的特征。对处理概念漂移的现有策略进行分类；概述最具代表性，独特和流行的技术和算法；讨论自适应算法的评估方法；并展示了一组说明性应用。这项调查以综合的方式涵盖了概念漂移的不同方面，以反思现有的现有分散状态。因此，它旨在为研究人员，行业分析人员和从业人员全面介绍概念漂移适应。</p>
+<hr>
+<p>1.简介</p>
+<p>​        我们的数字世界正在迅速增长。根据IDC调查报告，2012年生成的数据量估计超过2.8 zbytes（2.8万亿千兆字节）[Gantz and Reinsel 2012]。迫切需要高效，有效的工具和分析方法来处理不同应用程序和领域中不断增长的数据量。传统上，在数据挖掘中，已收集的数据以脱机模式进行处理。例如，训练预测模型使用历史数据作为一组对（输入，输出）给出。随后可以将以这种方式训练的模型应用于预测新的看不见的输入数据的输出。</p>
+<p>​        但是，数据经常以流的形式出现。在机器的主内存中容纳大量流数据是不切实际的，而且通常是不可行的。因此，仅在线处理是合适的。在这种情况下，可以通过连续更新或通过使用最近一批数据进行再训练来增量地训练预测模型。但是，计算效率并不是监督数据流学习的唯一问题。</p>
+<p>​        在动态变化和非平稳的环境中，数据分布会随着时间而变化，从而产生概念漂移现象[Schlimmer and Granger 1986; Widmer and Kubat 1996]。实际概念漂移指的是在给定输入（输入要素）的情况下，输出（即目标变量）的条件分布的变化，而输入的分布可能保持不变。真实概念漂移的一个典型示例是跟随在线新闻流时用户兴趣的变化。尽管传入新闻文档的分发通常保持不变，但该用户感兴趣（因此不感兴趣）的新闻文档的条件分发会发生变化。自适应学习是指在预测模型运行过程中在线更新它们以对概念漂移做出反应。</p>
+<p>​        在过去的十年中，与概念漂移学习相关的研究日益增长，并且已经开发了许多漂移感知自适应学习算法。尽管该研究主题很受欢迎，但社区尚未获得有关概念漂移处理技术的全面调查。造成这种情况的原因之一是，该问题的范围很广，涉及不同的研究领域。而且，术语还不完善。因此，已经在不同的环境下以不同的名称独立开发了类似的自适应学习策略。<br>​        考虑到当前关于概念漂移的研究现状，它非常流行，而且散布在各个社区中，因此迫切需要对迄今为止所做的研究进行全面总结，以统一研究人员中的概念和术语并调查过去研究过的最新方法和技术。</p>
+<p>​        提供了一些与漂移意识学习相关的评论。但是，它们要么不仅仅专注于概念漂移，要么不涉及自适应学习的特定主题。因此，这些评论是零散的和/或过时的。目前，关于概念漂移的引用最多的调查早于2004年在Tsymbal [2004]中发表。以下与概念漂移主题相关的概述主要集中于集成技术[Kuncheva 2004，2008]，归纳规则学习算法[Maloof 2010]或主要是非增量学习技术[Zliobaite 2009]，它们可以不受限制地使用计算资源，因此范围有限。对数据流的评论[Gaber等。 2005; Gama 2010； Bifet等。 [2011年]仅部分处理数据漂移问题。数据流研究仅在某种程度上涵盖了自适应学习，而主要重点仍然是使学习算法递增并优化计算资源和预测精度之间的平衡。</p>
+<p>​        一些评论仅限于特定的应用领域。一份有针对性的立场文件[Grisogono 2006]提出了一套用于国防的复杂自适应系统的要求。最近的重点综述[Kadlec等。 [2011年]调查了用于软传感器的适应机制。最后，最近的一篇文章[Moreno-Torres等。 [2012年]专注于描述数据分布随时间变化的各种方式，并且仅从数据集转移社区的角度简要介绍了适应技术，大部分都忽略了概念漂移方面的工作。最近的综述[Alberg等。 [2012]专注于决策树。</p>
+<p>​        本文稿通过调查自适应学习方法，介绍评估方法并讨论说明性应用程序，提供了有关处理概念漂移的综合视图。当输入要素和目标变量之间的关系随时间变化时，它专注于在线监督学习。</p>
+<p>​        文章的结构安排如下。在第2节中，我们介绍了概念漂移问题，描述了自适应学习算法的特征，并给出了具有启发性的应用示例。第3节介绍了自适应学习方法的综合分类法。第四部分讨论了自适应学习算法的实验设置和评估方法。第5节总结调查</p>
+<h2 id="2-自适应学习算法"><a href="#2-自适应学习算法" class="headerlink" title="2.自适应学习算法"></a>2.自适应学习算法</h2><p>​        学习算法通常需要在动态环境中运行，动态环境正在发生意想不到的变化。这些算法的一个理想特性是它们合并新数据的能力。如果数据生成过程不是严格固定的（适用于大多数现实应用程序），那么我们预测的基本概念（例如，用户阅读新闻的兴趣）可能会随着时间而改变。适应这种概念漂移的能力可以看作是增量学习系统的自然扩展[Giraud-Carrier 2000]，该学习实例通过实例学习预测模型。自适应学习算法可以看作是高级增量学习算法，能够随着时间的推移适应数据生成过程的发展。</p>
+<p>​        本节介绍概念漂移并描述自适应学习的特征。</p>
+<h3 id="2-1。设置和定义"><a href="#2-1。设置和定义" class="headerlink" title="2.1。设置和定义"></a>2.1。设置和定义</h3><p>​        在机器学习中，监督学习问题的形式如下。我们的目标是在给定一组输入特征X∈p的情况下，在回归任务（或分类任务中的y）中预测目标变量y∈α1。一个n例子是一对（X，y）。例如，X是下午2点化学过程的一组传感器读数。 1月2日，并且y =“好”是当时所生产产品的真实质量。在用于模型构建的训练示例中，X和y都是已知的。在应用了预测模型的新示例中，Xis已知，但在预测时y未知。 // important</p>
+<p>​        根据贝叶斯决策理论[Duda等。 [2001]，可以通过类别p（y）的先验概率和类别条件概率密度函数p（X | y）来描述所有类别y = 1，…，c的分类，其中c是数字类。根据类别的后验概率做出分类决策，对于类别y可以表示为 // important</p>
+<p>​         目标变量空间的类型取决于任务。在分类中，目标变量采用分类值（类标签），而在回归中，目标变量采用连续值。</p>
+<p>​        我们可以区分两种学习模式：离线学习和在线学习。在离线学习中，整个训练数据必须在模型训练时可用。只有训练完成后，才能将模型用于预测。相反，在线算法按顺序处理数据。他们生成了一个模型并将其投入运行，而一开始没有完整的训练数据集。随着更多训练数据的到来，该模型会在操作过程中不断更新。</p>
+<p>​        增量算法比在线算法的限制性要小，它可以一个接一个地处理输入示例（或逐批处理），并在收到每个示例后更新决策模型。增量算法可以随机访问先前的示例或代表/选定的示例。在这种情况下，这些算法称为带有部分内存的增量算法[Maloof和Michalski 2004]。通常，在增量算法中，对于任何新的数据表示形式，模型的更新操作均基于上一个模型。流算法是用于处理高速连续数据流的在线算法。在流式传输中，示例也将按顺序处理，并且仅需几次检查即可（通常只有一次）。这些算法使用有限的内存和每个项目有限的处理时间。</p>
+<p>​        在我们考虑的情况下，数据通常实时地在线到达，从而形成了可能无限的数据流。为机器提供了刚到达的输入数据，目的是预测其目标变量的值。机械必须构造一个预测模型，该模型是输入（特征）空间与其对应的输出（目标）空间之间的映射函数。例如，给定传感器在化学生产过程中的读数，任务是预测产品（输出）的质量。</p>
+<p>​        因为预计数据会随着时间的推移而发展，尤其是在动态变化的环境（通常是非平稳性）中，所以其基本分布会随着时间动态变化。概念漂移设置中的一般假设是，更改会意外发生且不可预测，尽管在某些特定的实际情况下，可以与特定环境事件的发生相关地提前知道更改。但是，针对一般漂移的解决方案需要针对特定情况的解决方案。而且，改变可以采取不同的形式（即，输入数据特性或输入数据与目标变量之间的关系可以改变）。</p>
+<p>​        形式上，时间点t0和时间点t1之间的概念漂移可以定义为 //todo </p>
+<p>​        其中pt0表示在时间t0处输入变量X与目标变量y之间的联合分布。数据的变化可以被描述为这种关系的组成部分的变化[Kelly等。 1999年；高等。 2007]。换句话说：</p>
+<p>-类p（y）的先验概率可能会发生变化；</p>
+<p>-类条件条件概率p（X | y）可能会发生变化；以及</p>
+<p>-结果，类p（y | X）的后验概率可能会发生变化，影响预测。</p>
+<p>​        我们有兴趣了解这些变化的两个含义：（i）数据分布p（y | X）是否发生变化并影响预测决策；（ii）在不知道真实标签的情况下，数据更改是否可见于数据分布（即，p（X）更改）。从预测的角度来看，只有影响预测决策的更改才需要调整。</p>
+<p>​        我们可以区分两种类型的漂移：</p>
+<p>​        实际概念漂移是指p（y | X）的变化。无论p（X）有无变化，这种变化都可能发生。实际的概念漂移在Salganicoff [1997]中被称为概念漂移，在Gao等人中被称为条件变化。 [2007]。</p>
+<p>​     （2）如果传入数据的分布发生变化（即p（X）发生变化）而又不影响p（y | X），就会发生虚拟漂移[Delany等。 2005; Tsymbal 2004； Widmer and Kubat 1993]。但是，虚拟漂移在文献中有不同的解释：</p>
+<p>​        –最初，虚拟漂移的定义是[Widmer and Kubat 1993]，它是由于数据表示不完整而不是由于实际概念的变化而发生的。</p>
+<p>​        –虚拟漂移与数据分布的变化相对应，导致决策边界的变化[Tsymbal 2004]。</p>
+<p>​        –虚拟漂移是一种不影响目标概念的漂移[Delany等。 2005]。</p>
+<p>​        –虚拟漂移也被称为临时漂移[Lazarescu等。 2004]，采样偏移[Salganicoff 1997]和特征变化[Gao等。 2007]。</p>
+<p>​        在本文中，虚拟漂移是指数据分布p（X）.2的变化。</p>
+<p>​        示例：考虑有关房地产的在线新闻流。给定用户的任务是将传入新闻分类为相关新闻和不相关新闻。假设用户正在寻找新公寓；则有关民居的新闻是相关的，而度假屋则无关。如果新闻门户的编辑者发生了变化，写作风格也将发生变化，但是住宅仍然与用户相关。这种情况对应于虚拟漂移。如果由于危机而发表了更多关于住宅的文章，而发表了更少的关于度假屋的文章，但是编辑，写作风格和用户兴趣保持不变，则这种情况对应于班级的先验概率出现偏差。另一方面，如果用户已经买了房子并开始寻找度假目的地，则住宅变得不相关而度假屋变得相关。这种情况对应于实际概念漂移。在这种情况下，写作风格和先验概率保持不变。所有类型的漂移可能会同时发生。</p>
+<p>​        图1说明了漂移的类型。该图显示，只有实际概念漂移会更改类边界，并且先前的决策模型已过时。实际上，改变实际先验概率或新颖性的虚拟漂移可能与实际漂移结合出现。在这些情况下，分类边界也会受到影响。</p>
+<p>​        该调查主要关注于处理实际概念漂移，这在输入数据分布中是不可见的。在许多情况下，处理实际概念漂移的技术也可以处理在输入数据分布中表现出来的漂移，但反之则不行。用于处理实际概念漂移的技术通常依赖于有关预测性能的反馈，而用于跟踪变化的先验概率的技术和用于处理虚拟漂移或新颖性检测的技术通常可以在没有此类反馈的情况下运行。本文不涵盖可以从传入数据分布（P（X））中检测到的此类漂移。对跟踪漂移先验概率感兴趣的读者请参见Zhang和Zhou [2010]，新颖性检测请参见Markou和Singh [2003]和Masud等。 [2011]，以及在使用基于聚类的半监督学习技术处理虚拟漂移时，请参考Aggarwal [2005]，Bouchachia等。 [2010]，以及Bouchachia和Vanaret [2013</p>
+<h3 id="2-2。数据随时间变化"><a href="#2-2。数据随时间变化" class="headerlink" title="2.2。数据随时间变化"></a>2.2。数据随时间变化</h3><p>​        数据分布随时间的变化可能以不同的形式体现出来，如图2所示的玩具一维数据。在此数据中，数据均值发生变化。漂移可能突然/突然发生，方法是从一个概念切换到另一个概念（例如，用化工厂中校准不同的另一个传感器替换传感器），也可能是增量的，由介于两者之间的许多中间概念组成 （例如，传感器缓慢磨损并变得不那么精确）。漂移可能突然发生（例如，作为信用分析员正在调查的感兴趣的主题可能突然从例如肉类价格转变为公共交通）或逐渐发生（例如，相关新闻主题从住宅变为度假屋，而用户不会突然切换，而是会在一段时间内回到先前的兴趣）。概念漂移处理算法的挑战之一是不要将真正的漂移与离群值或噪声混合在一起，后者是指一次性的随机偏差或异常（离群值检测请参见Chandola等人[2009]）。在后一种情况下，不需要适应性。最后，漂泊可能会引入以前未见过的新概念，或者一段时间后（例如，以时尚的形式）可能会再次出现以前见过的概念。变化可以通过严重性，可预测性和频率来进一步表征[Minku等。 2010; Kosina等。 2010]。</p>
+<p>​        大多数自适应学习技术都隐式或显式地假定并专门研究概念漂移的某些子集。他们中的许多人都假设突然发生了不可重复的漂移。但实际上，通常可以观察到多种类型的混合物。</p>
+<h3 id="2-3。不断变化的环境中对预测模型的要求"><a href="#2-3。不断变化的环境中对预测模型的要求" class="headerlink" title="2.3。不断变化的环境中对预测模型的要求"></a>2.3。不断变化的环境中对预测模型的要求</h3><p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+<p>​        </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/">http://example.com/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/18/%E8%AE%BA%E6%96%87001-Federated-Machine-Learning-Concept-and-Applications/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">论文001-Federated_Machine_Learning:_Concept_and_Applications</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">2.自适应学习算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%82%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">2.1。设置和定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E3%80%82%E6%95%B0%E6%8D%AE%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">2.2。数据随时间变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E3%80%82%E4%B8%8D%E6%96%AD%E5%8F%98%E5%8C%96%E7%9A%84%E7%8E%AF%E5%A2%83%E4%B8%AD%E5%AF%B9%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A6%81%E6%B1%82"><span class="toc-number">1.3.</span> <span class="toc-text">2.3。不断变化的环境中对预测模型的要求</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/" title="005_A_Survey_on_Concept_Drift_Adaptation"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="005_A_Survey_on_Concept_Drift_Adaptation"/></a><div class="content"><a class="title" href="/2020/11/18/005-A-Survey-on-Concept-Drift-Adaptation/" title="005_A_Survey_on_Concept_Drift_Adaptation">005_A_Survey_on_Concept_Drift_Adaptation</a><time datetime="2020-11-18T08:40:55.000Z" title="Created 2020-11-18 16:40:55">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/18/%E8%AE%BA%E6%96%87001-Federated-Machine-Learning-Concept-and-Applications/" title="论文001-Federated_Machine_Learning:_Concept_and_Applications"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="论文001-Federated_Machine_Learning:_Concept_and_Applications"/></a><div class="content"><a class="title" href="/2020/11/18/%E8%AE%BA%E6%96%87001-Federated-Machine-Learning-Concept-and-Applications/" title="论文001-Federated_Machine_Learning:_Concept_and_Applications">论文001-Federated_Machine_Learning:_Concept_and_Applications</a><time datetime="2020-11-18T05:42:41.000Z" title="Created 2020-11-18 13:42:41">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/18/Applications/" title="Applications"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Applications"/></a><div class="content"><a class="title" href="/2020/11/18/Applications/" title="Applications">Applications</a><time datetime="2020-11-18T05:42:07.000Z" title="Created 2020-11-18 13:42:07">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/09/%E6%8C%91%E6%88%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A12/" title="挑战程序设计2"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="挑战程序设计2"/></a><div class="content"><a class="title" href="/2020/11/09/%E6%8C%91%E6%88%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A12/" title="挑战程序设计2">挑战程序设计2</a><time datetime="2020-11-09T08:10:28.000Z" title="Created 2020-11-09 16:10:28">2020-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/09/%E6%8C%91%E6%88%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A11/" title="挑战程序设计1"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="挑战程序设计1"/></a><div class="content"><a class="title" href="/2020/11/09/%E6%8C%91%E6%88%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A11/" title="挑战程序设计1">挑战程序设计1</a><time datetime="2020-11-09T04:46:17.000Z" title="Created 2020-11-09 12:46:17">2020-11-09</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

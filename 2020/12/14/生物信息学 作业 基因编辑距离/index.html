@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="生物信息学中的序列相似性比对算法在生物信息学中，对于两个给定DNA序列，进行有效的序列对比能够衡量两个DNA相似程度，对于发现生物序列中的功能、变异和进化的信息具有非常重要的意义。本方法的主要思想就是我们可以运用某种特定的数学模型和算法，去有效的衡量出来两个基因序列之间的相似度，比对的结果能够很好的反映出序列之间的关系和他们的生物学特征的关联性。同时序列相似性比对也是在计算生物学中解决对象序列装配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="生物信息学中的序列相似性比对算法在生物信息学中，对于两个给定DNA序列，进行有效的序列对比能够衡量两个DNA相似程度，对于发现生物序列中的功能、变异和进化的信息具有非常重要的意义。本方法的主要思想就是我们可以运用某种特定的数学模型和算法，去有效的衡量出来两个基因序列之间的相似度，比对的结果能够很好的反映出序列之间的关系和他们的生物学特征的关联性。同时序列相似性比对也是在计算生物学中解决对象序列装配">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-12-14T12:08:03.074Z">
+<meta property="article:modified_time" content="2020-12-14T12:08:03.074Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-14 20:08:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-12-14T12:08:03.074Z" title="Created 2020-12-14 20:08:03">2020-12-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-12-14T12:08:03.074Z" title="Updated 2020-12-14 20:08:03">2020-12-14</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="生物信息学中的序列相似性比对算法"><a href="#生物信息学中的序列相似性比对算法" class="headerlink" title="生物信息学中的序列相似性比对算法"></a>生物信息学中的序列相似性比对算法</h1><p>在生物信息学中，对于两个给定DNA序列，进行有效的序列对比能够衡量两个DNA相似程度，对于发现生物序列中的功能、变异和进化的信息具有非常重要的意义。本方法的主要思想就是我们可以运用某种特定的数学模型和算法，去有效的衡量出来两个基因序列之间的相似度，比对的结果能够很好的反映出序列之间的关系和他们的生物学特征的关联性。同时序列相似性比对也是在计算生物学中解决对象序列装配等高级问题的首要步骤和基础。这些算法大多基于动态规划算法，因而所有这些算法都有一个共同的特点：他们都是基于字符串比较算法，因而序列的比较本质上就是字符的比较。因而我们可以去尽可能套用一些字符串比对和字符串相似性的方法来寻找一个高效和迅速进行序列比对的方法，从而能够在大量的DNA序列数据库中比对两两之间的相似度，从而形成相似度矩阵，更好的进行后面的工作。</p>
+<p>这里我们采用一个两个简单的基因编辑距离问题来说明此类动态规划算法的设计和通用的实现模式。</p>
+<p>编辑距离（Minimum Edit Distance，MED），又称Levenshtein距离，是指两个字符串之间，由一个转成另一个所需要的最少编辑操作次数。如果两个 DNA 序列有类似的公共子序列，那么这些两个序列很可能是<strong>同源的</strong>。在比对两个序列时，不仅要考虑完全匹配的字符，还要考虑一个序列中的空格或间隙（或者，相反地，要考虑另一个序列中的插入部分）和不匹配，这两个方面都可能意味着突变（mutation）。在序列比对中，需要找到最优的比对（最优比对大致是指要将匹配的数量最大化，将空格和不匹配的数量最小化）。如果要更正式些，可以确定一个分数，为匹配的字符添加分数、为空格和不匹配的字符减去分数。</p>
+<p>首先问题简要定义如下，给定两个DNA序列串A和B，现在要将A经过若干操作变换成B，请问最小的操作次数是多少？</p>
+<p>具体化来说，这里面可行的操作如下：</p>
+<ol>
+<li>删除–将字符串A中的某个字符删除。</li>
+<li>插入–在字符串A的某个位置插入某个字符。</li>
+<li>替换–将字符串A中的某个字符替换为另一个字符。</li>
+</ol>
+<p>我们可以看到，一般来说如果编辑距离越小，那么在遗传、变异和进化方面，两种基因会有越高的相似度。这里的动态规划算法具有$O(n^2)$的复杂度。</p>
+<p>具体过程如下：</p>
+<p>有三种操作，所以有三个子集。子集划分完了，考虑状态转移的时候<br>先考虑如果我没有进行这个操作应该是什么状态<br>然后考虑你进行这一步操作之后会对你下一个状态造成什么影响<br>然后再加上之前状态表示中你决策出来的那个DP属性<br>这样就可以自然而然地搞出来转移方程了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> f[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a，b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">int</span> n = a.size()，m = b.size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) f[i][<span class="number">0</span>] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= m;j++) f[<span class="number">0</span>][j] = j;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= m;j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[i] == b[j])ans = <span class="number">0</span>;</span><br><span class="line">            f[i][j] = min(f[i - <span class="number">1</span>][j - <span class="number">1</span>] + ans，min(f[i - <span class="number">1</span>][j]，f[i][j - <span class="number">1</span>]) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[n][m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里我们用操作次数来衡量两个DNA序列的像素程度，但是通常在不同情况下，不同的操作有不同的概率发生，比如”替换“ 操作会在自然界发生的更多一些，那么我们可以给三种操作引入不同的权重，从而能够更加准确的衡量两种基因的相似度。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">http://example.com/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/08/numpy/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">numpy</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%80%A7%E6%AF%94%E5%AF%B9%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">生物信息学中的序列相似性比对算法</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/12/14/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%20%E4%BD%9C%E4%B8%9A%20%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" title="No title">No title</a><time datetime="2020-12-14T12:08:03.074Z" title="Created 2020-12-14 20:08:03">2020-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/08/numpy/" title="numpy"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy"/></a><div class="content"><a class="title" href="/2020/12/08/numpy/" title="numpy">numpy</a><time datetime="2020-12-08T03:08:34.000Z" title="Created 2020-12-08 11:08:34">2020-12-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/30/Learning-Under-Concept-Drift-A-Review/" title="Learning Under Concept Drift:A Review"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Learning Under Concept Drift:A Review"/></a><div class="content"><a class="title" href="/2020/11/30/Learning-Under-Concept-Drift-A-Review/" title="Learning Under Concept Drift:A Review">Learning Under Concept Drift:A Review</a><time datetime="2020-11-30T05:45:22.000Z" title="Created 2020-11-30 13:45:22">2020-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/27/A-survey-of-Methods-for-Time-Series/" title="A_survey_of_Methods_for_Time_Series"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="A_survey_of_Methods_for_Time_Series"/></a><div class="content"><a class="title" href="/2020/11/27/A-survey-of-Methods-for-Time-Series/" title="A_survey_of_Methods_for_Time_Series">A_survey_of_Methods_for_Time_Series</a><time datetime="2020-11-27T02:48:30.000Z" title="Created 2020-11-27 10:48:30">2020-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E4%BB%8E%E5%8F%8D%E5%A4%8D%E6%97%A0%E5%B8%B8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0-%E4%B8%80%E7%A7%8D%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/" title="从反复无常的数据流中进行在线学习:一种生成方法"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从反复无常的数据流中进行在线学习:一种生成方法"/></a><div class="content"><a class="title" href="/2020/11/19/%E4%BB%8E%E5%8F%8D%E5%A4%8D%E6%97%A0%E5%B8%B8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0-%E4%B8%80%E7%A7%8D%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/" title="从反复无常的数据流中进行在线学习:一种生成方法">从反复无常的数据流中进行在线学习:一种生成方法</a><time datetime="2020-11-19T13:01:07.000Z" title="Created 2020-11-19 21:01:07">2020-11-19</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
